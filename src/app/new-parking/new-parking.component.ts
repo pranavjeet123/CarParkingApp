@@ -26,7 +26,7 @@ togglesearchForm(){
 
 sortFields:Array<string>=['Black','Green','Blue','Silver','Red','White'];
 
-//availableSlots:number=10-this.carservice.getAvailableCars();
+availableSlots:number=10-this.carservice.getAvailableCars();
 
   constructor(
 
