@@ -13,12 +13,20 @@ export class NewParkingComponent implements OnInit {
 
 @ViewChild('newcarparkingform', {static: false}) newcarparkingform:NgForm;
   showForm =  true;
+  showsearchForm =  true;
    toggleForm(){
   this.showForm = !this.showForm;
 
 }
 
-availableSlots:number=10-this.carservice.getAvailableCars();
+togglesearchForm(){
+  this.showsearchForm = !this.showsearchForm;
+
+}
+
+sortFields:Array<string>=['Black','Green','Blue','Silver','Red','White'];
+
+//availableSlots:number=10-this.carservice.getAvailableCars();
 
   constructor(
 

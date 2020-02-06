@@ -8,11 +8,54 @@
       <div class="col-sm">
       </div>
       <div class="rightbuttons">
-        <button id="query"class="btn btn-success sm">Query Data</button>
+        <button id="query"class="btn btn-success sm" (click)="togglesearchForm()">Query Data</button>
         <button  class="btn btn-danger sm"  (click)="toggleForm()">Park a car</button>
       </div>
     </div>
   </div>
+
+  <form class="searchform" #searchcarform ="ngForm" (ngSubmit)="onSubmit(searchcarform.value)" *ngIf="!showsearchForm">
+    <div class="row">
+
+      <div class ="form-group col-sm-4">
+ 
+          <input 
+          type="text"
+          class="form-control"
+          placeholder="Type Registration #"
+          name="regno"
+          ngModel
+          required>
+      </div>
+      <div class ="form-group col-sm-3">
+      
+          <select 
+          class="form-control"
+          placeholder="Car Color"
+          name="color"
+          [(ngModel)]="sortField">
+         <option *ngFor="let field of sortFields"
+         [value]="field">
+         {{field}}
+
+         </option></select>
+        
+      </div>
+ 
+
+      <div class ="form-group col-sm-2">
+        
+         <button class="btn btn-primary" >search</button>
+      </div>
+      <div class ="form-group col-sm-2">
+        
+        <button class="btn btn-secondary">Reset</button>
+     </div>
+
+    </div>
+
+
+</form>
 
   <form class="form" #newcarparkingform ="ngForm" (ngSubmit)="onSubmit(newcarparkingform.value)" *ngIf="!showForm">
       <div class="row">
