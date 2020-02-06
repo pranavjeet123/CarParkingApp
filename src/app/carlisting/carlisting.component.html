@@ -1,0 +1,33 @@
+
+
+
+<div class="amountCollected">
+    <div class="alert alert-success col-sm-3 ">
+    <strong>Total Amount Collected : </strong><span>{{amountCollected}}</span>
+  </div>
+</div>
+
+
+<table class="table table-striped">
+  <thead >
+  <tr class="header">
+    <th scope="col">#</th>
+    <th scope="col">Car Number </th>
+    <th scope="col">Color</th>
+    <th scope="col">Slot No</th>
+    <th scope="col">Date Time</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let car of cars ; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td> {{ car.regno }}</td>
+    <td>{{ car.color }}</td>
+    <td>{{car.alloted_slot_no}}</td>
+    <td>{{ car.parking_date | date : timezone }}</td>
+    <td><button class="btn btn-warning" (click) ="deleteCar(i)">Remove</button></td>
+   
+  </tr>
+  </tbody>
+</table>

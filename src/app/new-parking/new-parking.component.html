@@ -1,0 +1,60 @@
+
+<div class="container">
+    <div class="row">
+      <div class="leftinfo">
+        <p>Total Parking Slots:<span class="red">10</span></p>
+        <p>Available Parking Slots:<span class="red">{{availableSlots}}</span></p>
+      </div>
+      <div class="col-sm">
+      </div>
+      <div class="rightbuttons">
+        <button id="query"class="btn btn-success sm">Query Data</button>
+        <button  class="btn btn-danger sm"  (click)="toggleForm()">Park a car</button>
+      </div>
+    </div>
+  </div>
+
+  <form class="form" #newcarparkingform ="ngForm" (ngSubmit)="onSubmit(newcarparkingform.value)" *ngIf="!showForm">
+      <div class="row">
+
+        <div class ="form-group col-sm-3">
+   
+            <input 
+            type="text"
+            class="form-control"
+            placeholder="Registration Number"
+            name="regno"
+            ngModel
+            required>
+        </div>
+        <div class ="form-group col-sm-3">
+         
+            <input 
+            type="text"
+            class="form-control"
+            placeholder="Car Color"
+            name="color"
+            ngModel
+            required>
+        </div>
+        <div class ="form-group col-sm-3">
+          
+            <input 
+            type="text"
+            class="form-control"
+            placeholder="Slot Num"
+            name="alloted_slot_no"
+            ngModel
+            required>
+        </div>
+
+        <div class ="form-group col-sm-3">
+          
+           <button class="btn btn-primary" type="submit">Assign New Parking</button>
+        </div>
+
+
+      </div>
+
+
+  </form>

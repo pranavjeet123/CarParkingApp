@@ -1,0 +1,26 @@
+.leftinfo {
+    float:left;
+    margin-top:30px;
+}
+.rightbuttons{
+ 
+    margin-top:30px;
+ 
+}
+
+#query{
+  margin:7px;
+}
+.priceinfo{
+    display:inline-block;
+}
+
+.form{
+    margin-left:15px;
+}
+.red{
+    color:red;
+    padding:2px;
+    font-weight:600;
+
+}
